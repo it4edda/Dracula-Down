@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     private bool canShoot = true;
     public void OnAttack()
     {
+        Debug.Log("Attacked");
         if (!canShoot) return;
         Instantiate(bulletPrefab, transform.position, transform.rotation);
         StartCoroutine(ShootTimer());
