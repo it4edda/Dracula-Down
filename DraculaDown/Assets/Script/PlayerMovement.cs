@@ -1,16 +1,23 @@
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] InputActionReference mouse;
     [SerializeField] float speed;
+    [SerializeField] float timeUntilBoost;
+    [SerializeField] InputActionReference mouse;
+    [SerializeField] bool autoBoost;
     Rigidbody2D rb;
-    Vector2 lookDir;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (autoBoost)
+        {
+            StartCoroutine(BoostCooldown());
+        }
     }
 
     void Update()
@@ -26,14 +33,15 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawLine(transform.position, Worldpos, Color.red);
     }
 
+    IEnumerator BoostCooldown()
+    {
+        yield return new WaitForSeconds(timeUntilBoost);
+        Boost();
+        StartCoroutine(BoostCooldown());
+    }
+
     public void Boost()
     {
         rb.AddForce(transform.right * speed);
-        //rb.linearVelocity = Vector2.up * speed;
-    }
-
-    public void LookAround(Vector2 direction)
-    {
-        lookDir = direction;
     }
 }
