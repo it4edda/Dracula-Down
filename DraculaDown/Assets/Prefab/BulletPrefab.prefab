@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7896719830498781865}
   - component: {fileID: 3131626356133773169}
   - component: {fileID: 8435631822486074011}
-  m_Layer: 0
+  - component: {fileID: -4262986411962283836}
+  m_Layer: 7
   m_Name: BulletPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -1058635208788582802, guid: 7fae213620dd38245898bf76f7717b89, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -133,6 +134,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b38ca11e737343b3ead9e85e98a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPhysics
-  force: 1
-  lifetime: 2
+  force: 2
+  lifetime: 3
   rb: {fileID: 3131626356133773169}
+  boom: {fileID: 6627588599991671545, guid: 61be4bd84ef37084abcc67427b25efbb, type: 3}
+--- !u!58 &-4262986411962283836
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301723712351446669}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.49999997

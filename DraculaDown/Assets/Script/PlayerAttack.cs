@@ -10,7 +10,6 @@ public class PlayerAttack : MonoBehaviour
     public void OnAttack()
     {
         if (!canShoot) return;
-        Debug.Log("DID SHOOT BY PRESSING JUMOP BUTTON");
         Instantiate(bulletPrefab, transform.position, transform.rotation);
         StartCoroutine(ShootTimer());
     }
