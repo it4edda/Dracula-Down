@@ -1,16 +1,23 @@
+using System.Collections;
 using UnityEngine;
+
 
 public class PlayerAttack : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] float reload = 1f;
+    private bool canShoot = true;
+    public void OnAttack()
     {
-        
+        if (!canShoot) return;
+        Debug.Log("DID SHOOT BY PRESSING JUMOP BUTTON");
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
+        StartCoroutine(ShootTimer());
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator ShootTimer()
     {
-        
+        canShoot = false;
+        yield return new WaitForSeconds(reload);
+        canShoot = true;
     }
 }
