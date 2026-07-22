@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "PlayerImout",
+    "maps": [
+        {
+            "name": "Ship",
+            "id": "a169ea81-fa75-4398-bcc1-69dae842348f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "38934e55-bb55-4ce3-84ae-4aaafccdd938",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "New action1",
+                    "type": "Button",
+                    "id": "c8e26690-ddaf-4d9c-a0ae-1c61c37e8929",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5631ceea-65b2-4ee1-bd4d-4119fec82a0a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b1456a4-0929-4cc5-af80-7aa0fabd78c0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
