@@ -15,6 +15,7 @@ public class BaseEnemy : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         isMoving = true;
         isRotating = true;
     }
