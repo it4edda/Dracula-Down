@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
         Vector3 mousePos = Mouse.current.position.ReadValue();   
         mousePos.z=Camera.main.nearClipPlane;
         Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);

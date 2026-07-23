@@ -5829,6 +5829,14 @@ PrefabInstance:
       propertyPath: lazer
       value: 
       objectReference: {fileID: 1975207401}
+    - target: {fileID: 5312192307478034444, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312192307478034444, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6086873740164849704, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
       propertyPath: m_LocalScale.y
       value: 28.595
@@ -5848,6 +5856,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1975207405}
   m_SourcePrefab: {fileID: 100100000, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+--- !u!4 &1196415881 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2384249538575317847, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+  m_PrefabInstance: {fileID: 1196415879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1196415883 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5312192307478034444, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
@@ -6400,6 +6413,25 @@ MonoBehaviour:
   reverseBoost: 500
   rb: {fileID: 1196415883}
   boom: {fileID: 6627588599991671545, guid: 61be4bd84ef37084abcc67427b25efbb, type: 3}
+--- !u!1 &1987574507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7626655384384289189, guid: 331f383e8f7f05b4f92d2a4f11bd891c, type: 3}
+  m_PrefabInstance: {fileID: 7616218388140037185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1987574512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987574507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b1e9b0d32231e41b544448da665d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  targetTransform: {fileID: 1196415881}
+  panSpeed: 4
 --- !u!1001 &4405612499047943696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6617,7 +6649,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7626655384384289189, guid: 331f383e8f7f05b4f92d2a4f11bd891c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1987574512}
   m_SourcePrefab: {fileID: 100100000, guid: 331f383e8f7f05b4f92d2a4f11bd891c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
