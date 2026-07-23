@@ -19,7 +19,7 @@ public class ProgMeter : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(timer);
+        //Debug.Log(timer);
         
         isInInstance = instances[instancesCompleted] < timer;
         
