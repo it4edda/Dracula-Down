@@ -24,7 +24,7 @@ public class ChargingEnemy : BaseEnemy
     {
         if (isCharging) { return; }
         isMoving = false;
-        isRotating = false;
+        
         StartCoroutine(Charging());
     }
 
@@ -33,6 +33,7 @@ public class ChargingEnemy : BaseEnemy
         isCharging = true;
         rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(timeUntilCharge);
+        isRotating = false;
         rb.linearVelocity = transform.up * (chargeSpeed * Time.deltaTime);
         yield return new WaitForSeconds(chargeDuration);
         rb.linearVelocity = Vector3.zero;
