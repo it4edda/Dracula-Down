@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2986559217411531218}
   - component: {fileID: 1391812876744878709}
   - component: {fileID: 5361319409474954807}
+  - component: {fileID: 2112971404732126004}
   m_Layer: 0
   m_Name: CameraPrefab
   m_TagString: MainCamera
@@ -139,6 +140,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &2112971404732126004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7626655384384289189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b1e9b0d32231e41b544448da665d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
+  targetTransform: {fileID: 0}
+  panSpeed: 4
 --- !u!1001 &5033815146976067051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +210,42 @@ PrefabInstance:
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: ColorBySpeedModule.range.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: ColorBySpeedModule.range.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246357454812437736, guid: b52cd96cf1553d3499ab9077eb1146aa, type: 3}
+      propertyPath: ColorBySpeedModule.gradient.maxGradient.key0.a
+      value: 0.07058824
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -223,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1834522675890919542, guid: a74a76f6fae4fc341a7d9da492606bd8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1834522675890919542, guid: a74a76f6fae4fc341a7d9da492606bd8, type: 3}
       propertyPath: m_LocalRotation.w
