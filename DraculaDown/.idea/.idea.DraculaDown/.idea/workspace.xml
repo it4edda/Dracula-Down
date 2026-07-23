@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ed4195-0ec0-4e59-be1a-d7d7cb4a587f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DraculaDown/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DraculaDown/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/N.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/N.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/EnemyLife.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/EnemyLife.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Enemy/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Enemy/BaseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Enemy/ChargingEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Enemy/ChargingEnemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,9 @@
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;F:\PASSION DRIVE\Projects\CountDown\Dracula-Down\DraculaDown&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\PASSION DRIVE\Projects\CountDown\Dracula-Down\DraculaDown" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
@@ -65,7 +65,9 @@
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;F:\PASSION DRIVE\Projects\CountDown\Dracula-Down\DraculaDown&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\PASSION DRIVE\Projects\CountDown\Dracula-Down\DraculaDown" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -73,9 +75,13 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -83,9 +89,13 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -98,6 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1784814839939</updated>
       <workItem from="1784814843772" duration="533000" />
+      <workItem from="1784823954084" duration="6766000" />
     </task>
     <servers />
   </component>

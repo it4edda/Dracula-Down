@@ -8,6 +8,9 @@ public class ShootingEnemy : BaseEnemy
     [SerializeField] MinMax moveRadiusBounds;
     [SerializeField] MinMax timeUntilMoveBounds;
     [SerializeField] Vector2 moveTarget;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float fireRate;
+    bool isCoolingDown;
 
     bool isWaiting;
 
@@ -15,8 +18,10 @@ public class ShootingEnemy : BaseEnemy
     {
         base.Start();
         SetMovementTarget();
+        StartCoroutine(ShootTimer());
     }
 
+    #region Movement
     protected override void Movement()
     {
         if(!isMoving){ return; }
@@ -52,6 +57,28 @@ public class ShootingEnemy : BaseEnemy
 
         return point;
     }
+    #endregion
+
+    #region Shooting
+
+    IEnumerator ShootTimer()
+    {
+        isCoolingDown = true;
+        yield return new WaitForSeconds(fireRate);
+        isCoolingDown = false;
+        Shoot();
+    }
+    
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
+        if (!isCoolingDown)
+        {
+            StartCoroutine(ShootTimer());
+        }
+    }
+
+    #endregion
 }
 [Serializable]
 public struct MinMax
