@@ -11,7 +11,6 @@ public class BulletPhysics : MonoBehaviour
     [SerializeField] private GameObject boom;
     private Coroutine myTimer;
     [SerializeField] private int myDamage = 1;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,8 +21,8 @@ public class BulletPhysics : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<EnemyLife>().TakeDamage(myDamage);
-        Instantiate(boom, transform.position, quaternion.identity);
+        other.GetComponent<EnemyLife>()?.TakeDamage(myDamage);
+        Instantiate(boom, other.transform.position, quaternion.identity);
         StopCoroutine(myTimer);
         killObj();
     }
