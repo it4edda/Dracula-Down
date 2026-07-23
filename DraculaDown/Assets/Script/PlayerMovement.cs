@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         mousePos.z=Camera.main.nearClipPlane;
         Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);
         float angle = Mathf.Atan2(Worldpos.y - transform.position.y, Worldpos.x - transform.position.x) * Mathf.Rad2Deg;
-        quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+        quaternion rotation = Quaternion.Euler(0f, 0f, angle -90f);
         transform.rotation = rotation;
         //transform.LookAt(action.action.ReadValue<Vector2>());
         Debug.DrawLine(transform.position, Worldpos, Color.red);
@@ -42,6 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Boost()
     {
-        rb.AddForce(transform.right * speed);
+        rb.AddForce(transform.up * speed);
     }
 }
