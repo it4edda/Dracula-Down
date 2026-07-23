@@ -41,10 +41,4 @@ public class ChargingEnemy : BaseEnemy
         isRotating = true;
         isCharging = false;
     }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, agroRadius);
-    }
 }

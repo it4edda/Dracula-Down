@@ -15,9 +15,14 @@ public class BaseEnemy : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        GetTarget();
         isMoving = true;
         isRotating = true;
+    }
+
+    void GetTarget()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     protected virtual void Update()
@@ -27,7 +32,7 @@ public class BaseEnemy : MonoBehaviour
         RotateToTarget();
     }
 
-    protected void Movement()
+    protected virtual void Movement()
     {
         if (!isMoving) { return; }
         
@@ -41,5 +46,11 @@ public class BaseEnemy : MonoBehaviour
         float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle -90f);
         transform.rotation = rotation;
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, agroRadius);
     }
 }
