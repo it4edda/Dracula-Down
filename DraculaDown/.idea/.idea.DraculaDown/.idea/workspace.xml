@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ed4195-0ec0-4e59-be1a-d7d7cb4a587f" name="Changes" comment="" />
+    <list default="true" id="e6ed4195-0ec0-4e59-be1a-d7d7cb4a587f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DraculaDown/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DraculaDown/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/N.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/N.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/EnemyLife.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/EnemyLife.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/baf9d421e5ac43acaf162d71aef6a04c20ce00/ca/3b4217da/Ray.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Enemy/ChargingEnemy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
