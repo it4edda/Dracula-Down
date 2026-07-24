@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] float initialSpeed;
+    [SerializeField] float speedLoss;
     [SerializeField] float timeUntilBoost;
     [SerializeField] InputActionReference mouse;
     [SerializeField] bool autoBoost;
@@ -35,13 +37,34 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator BoostCooldown()
     {
         yield return new WaitForSeconds(timeUntilBoost);
-        Boost();
-        StartCoroutine(BoostCooldown());
+        StopCoroutine(ControlableBoost());
+        StartCoroutine(ControlableBoost());
+        //Boost();
+        if (autoBoost)
+            StartCoroutine(BoostCooldown());
     }
 
     public void Boost()
     {
-        if (playerMayMove)
-        rb.AddForce(transform.up * speed);
+        //if (playerMayMove) 
+        StopCoroutine(ControlableBoost());
+        StartCoroutine(ControlableBoost());
+            //rb.AddForce(transform.up * speed,  ForceMode2D.Impulse);
+    }
+    
+    IEnumerator ControlableBoost()
+    {
+        var boostTime = timeUntilBoost;
+        var currentSpeed = speed;
+        rb.AddForce(transform.up * (initialSpeed * Time.deltaTime),  ForceMode2D.Impulse);
+        while (boostTime > 0f)
+        {
+            rb.AddForce(transform.up * (currentSpeed * Time.deltaTime),  ForceMode2D.Force);
+            //rb.linearVelocity = transform.up * currentSpeed;
+            
+            currentSpeed = Mathf.Lerp(currentSpeed, 0f, speedLoss * Time.deltaTime);
+            boostTime -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
