@@ -8,9 +8,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] float reload = 1f;
     [SerializeField] private GameObject lazer;
-    private bool canShoot = true;
+    public bool canShoot = false;
     public void OnAttack()
     {
+        if (!canShoot) return;
         Debug.Log("Attacked");
         if (!canShoot) return;
         Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -25,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void LazerToggle()
     {
+        if (canShoot)
         lazer.SetActive(!lazer.activeSelf);
     }
     

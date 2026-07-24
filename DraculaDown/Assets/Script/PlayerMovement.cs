@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float timeUntilBoost;
     [SerializeField] InputActionReference mouse;
     [SerializeField] bool autoBoost;
+    public bool playerMayMove = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Boost()
     {
+        if (playerMayMove)
         rb.AddForce(transform.up * speed);
     }
 }
