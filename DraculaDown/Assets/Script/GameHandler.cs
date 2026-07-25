@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
+    public static event Action GameStarted;
+    
     private bool compressionValue = false;
     private bool launchIsFinished = false;
     [SerializeField] private Animator launchAnimator;
     [SerializeField] private float timeTilPlayerMayStart = 5f;
-    [SerializeField] private PlayerMovement pm;
-    [SerializeField] private PlayerAttack pa;
     [SerializeField] private Animator UiAnimator;
     [SerializeField] private Spawner sp;
     [SerializeField] private CameraMovement cameraMovement;
@@ -48,10 +48,7 @@ public class GameHandler : MonoBehaviour
         yield return new WaitForSeconds(timeTilPlayerMayStart);
         UiAnimator.SetBool("Show",true);
         launchAnimator.gameObject.SetActive(false);
-        pm.playerMayMove = true;
-        pa.canShoot = true;
-        sp.canSpawnEnemies = true;
-
+        GameStarted?.Invoke();
     }
 
     //Let the player "compress" and "release"

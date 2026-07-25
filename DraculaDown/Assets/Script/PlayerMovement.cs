@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
@@ -26,6 +27,21 @@ public class PlayerMovement : MonoBehaviour
     {
         boostOMeter.maxValue = timeUntilBoost;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void OnEnable()
+    {
+        GameHandler.GameStarted += GameStart;
+    }
+
+    void OnDisable()
+    {
+        GameHandler.GameStarted -= GameStart;
+    }
+
+    void GameStart()
+    {
+        playerMayMove = true;
         if (autoBoost)
         {
             StartCoroutine(BoostCooldown());

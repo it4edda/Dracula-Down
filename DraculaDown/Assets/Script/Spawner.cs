@@ -11,12 +11,24 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnRate;
     [SerializeField] float spawnRadius;
 public bool canSpawnEnemies = false;
-    void Start()
-    {
-        StartCoroutine(SpawnTimer());
-    }
 
-    IEnumerator SpawnTimer()
+void OnEnable()
+{
+    GameHandler.GameStarted += StartGame;
+}
+
+void OnDisable()
+{
+    GameHandler.GameStarted -= StartGame;
+}
+
+void StartGame()
+{
+    canSpawnEnemies = true;
+    StartCoroutine(SpawnTimer());
+}
+
+IEnumerator SpawnTimer()
     {
         yield return new WaitForSeconds(spawnRate);
         Spawn();

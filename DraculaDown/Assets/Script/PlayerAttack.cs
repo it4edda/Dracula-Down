@@ -9,6 +9,22 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float reload = 1f;
     [SerializeField] private GameObject lazer;
     public bool canShoot = false;
+
+    void OnEnable()
+    {
+        GameHandler.GameStarted += StartGame;
+    }
+
+    void OnDisable()
+    {
+        GameHandler.GameStarted -= StartGame;
+    }
+
+    void StartGame()
+    {
+        canShoot = true;
+    }
+
     public void OnAttack()
     {
         if (!canShoot) return;
