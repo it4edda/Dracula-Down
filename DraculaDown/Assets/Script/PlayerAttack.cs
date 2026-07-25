@@ -42,8 +42,15 @@ public class PlayerAttack : MonoBehaviour
 
     public void LazerToggle()
     {
-        if (canShoot)
-        lazer.SetActive(!lazer.activeSelf);
+        if (canShoot) lazer.SetActive(!lazer.activeSelf);
+    }
+
+    public void ShoopDaWhoop() => StartCoroutine(DoLazer());
+    private IEnumerator DoLazer()
+    {
+        LazerToggle();
+        yield return new WaitForSeconds(3);
+        LazerToggle();
     }
     
 }

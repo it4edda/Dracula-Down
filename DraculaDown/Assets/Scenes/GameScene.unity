@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: launchParticle
       value: 
       objectReference: {fileID: 41065895}
+    - target: {fileID: 1356477210104491381, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1821134789663650261, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
