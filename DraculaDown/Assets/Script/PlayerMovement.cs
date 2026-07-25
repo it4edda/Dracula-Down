@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -12,10 +13,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float timeUntilBoost;
     [SerializeField] InputActionReference mouse;
     [SerializeField] bool autoBoost;
+    [SerializeField] private Slider boostOMeter;
+    [SerializeField] private float boostOMeterValue;
+    [SerializeField] private Image countDown;
+    [SerializeField] private Sprite[] countDownNumbers;
+    [SerializeField] private ParticleSystem burstParticle;
+    [SerializeField] private ParticleSystem postBurstParticle;
+    
     public bool playerMayMove = false;
     Rigidbody2D rb;
     void Start()
     {
+        boostOMeter.maxValue = timeUntilBoost;
         rb = GetComponent<Rigidbody2D>();
         if (autoBoost)
         {
@@ -25,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(!playerMayMove) return;
+        
         Vector3 mousePos = Mouse.current.position.ReadValue();   
         mousePos.z=Camera.main.nearClipPlane;
         Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);
@@ -32,24 +43,54 @@ public class PlayerMovement : MonoBehaviour
         quaternion rotation = Quaternion.Euler(0f, 0f, angle -90f);
         transform.rotation = rotation;
         Debug.DrawLine(transform.position, Worldpos, Color.red);
+
+        boostOMeterValue += Time.deltaTime;
+        boostOMeter.value = boostOMeterValue;
+        
+        switch (Mathf.RoundToInt(timeUntilBoost-boostOMeterValue + 0.5f))
+        {
+            case 3:
+                countDown.sprite = countDownNumbers[0];
+                break;
+            case 2:
+                countDown.sprite = countDownNumbers[1];
+                break;
+            case 1:
+                countDown.sprite = countDownNumbers[2];
+                break;
+            
+            
+            default: // Transparent
+                countDown.sprite = countDownNumbers[3];
+                break;
+        }
     }
 
     IEnumerator BoostCooldown()
     {
         yield return new WaitForSeconds(timeUntilBoost);
-        StopCoroutine(ControlableBoost());
-        StartCoroutine(ControlableBoost());
+        if (playerMayMove)
+        {
+            StopCoroutine(ControlableBoost());
+            StartCoroutine(ControlableBoost());
+        }
         //Boost();
         if (autoBoost)
+        {
             StartCoroutine(BoostCooldown());
+            BurstParticles();
+            boostOMeterValue = 0;
+        }
+            
     }
 
     public void Boost()
     {
-        //if (playerMayMove) 
+        if (!playerMayMove) return;
         StopCoroutine(ControlableBoost());
         StartCoroutine(ControlableBoost());
             //rb.AddForce(transform.up * speed,  ForceMode2D.Impulse);
+            BurstParticles();
     }
     
     IEnumerator ControlableBoost()
@@ -57,14 +98,21 @@ public class PlayerMovement : MonoBehaviour
         var boostTime = timeUntilBoost;
         var currentSpeed = speed;
         rb.AddForce(transform.up * (initialSpeed * Time.deltaTime),  ForceMode2D.Impulse);
+        
         while (boostTime > 0f)
         {
             rb.AddForce(transform.up * (currentSpeed * Time.deltaTime),  ForceMode2D.Force);
             //rb.linearVelocity = transform.up * currentSpeed;
-            
+            //
             currentSpeed = Mathf.Lerp(currentSpeed, 0f, speedLoss * Time.deltaTime);
             boostTime -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    void BurstParticles()
+    {
+        burstParticle.Play();
+        postBurstParticle.Play();
     }
 }

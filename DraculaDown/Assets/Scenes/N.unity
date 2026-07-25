@@ -279,30 +279,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: speed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: autoBoost
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: speedLoss
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: initialSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: playerMayMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: timeUntilBoost
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2384249538575317847, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -342,10 +318,6 @@ PrefabInstance:
     - target: {fileID: 2384249538575317847, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312192307478034444, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: m_LinearDamping
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

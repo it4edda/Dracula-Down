@@ -11,6 +11,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private float timeTilPlayerMayStart = 5f;
     [SerializeField] private PlayerMovement pm;
     [SerializeField] private PlayerAttack pa;
+    [SerializeField] private Spawner sp;
     [SerializeField] private CameraMovement cameraMovement;
     [SerializeField] private ParticleSystem launchParticle;
     [SerializeField] private ParticleSystem starParticles;
@@ -47,7 +48,8 @@ public class GameHandler : MonoBehaviour
         launchAnimator.gameObject.SetActive(false);
         pm.playerMayMove = true;
         pa.canShoot = true;
-        
+        sp.canSpawnEnemies = true;
+
     }
 
     //Let the player "compress" and "release"
