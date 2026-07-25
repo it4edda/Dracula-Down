@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Sprite[] countDownNumbers;
     [SerializeField] private ParticleSystem burstParticle;
     [SerializeField] private ParticleSystem postBurstParticle;
+    [SerializeField] private AudioSource audioPlayer;
+    [SerializeField] private AudioClip boostSound;
     
     public bool playerMayMove = false;
     Rigidbody2D rb;
@@ -130,5 +132,6 @@ public class PlayerMovement : MonoBehaviour
     {
         burstParticle.Play();
         postBurstParticle.Play();
-    }
+        audioPlayer.PlayOneShot(boostSound, 0.2f);
+    }   
 }
