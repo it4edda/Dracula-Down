@@ -49,6 +49,8 @@ MonoBehaviour:
   timeTilPlayerMayStart: 5
   pm: {fileID: 0}
   pa: {fileID: 0}
+  UiAnimator: {fileID: 0}
+  sp: {fileID: 0}
   cameraMovement: {fileID: 0}
   launchParticle: {fileID: 0}
   starParticles: {fileID: 0}
@@ -172,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 7620471120297432539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -0.83, z: 0}
+  m_LocalPosition: {x: 0.3, y: -0.83, z: 0}
   m_LocalScale: {x: 1.9718962, y: 1.9727938, z: 3.1854875}
   m_ConstrainProportionsScale: 0
   m_Children: []

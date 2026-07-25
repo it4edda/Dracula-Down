@@ -11,6 +11,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private float timeTilPlayerMayStart = 5f;
     [SerializeField] private PlayerMovement pm;
     [SerializeField] private PlayerAttack pa;
+    [SerializeField] private Animator UiAnimator;
     [SerializeField] private Spawner sp;
     [SerializeField] private CameraMovement cameraMovement;
     [SerializeField] private ParticleSystem launchParticle;
@@ -45,6 +46,7 @@ public class GameHandler : MonoBehaviour
         cameraMovement.cameraCanMove = true;
         starParticles.Play();
         yield return new WaitForSeconds(timeTilPlayerMayStart);
+        UiAnimator.SetBool("Show",true);
         launchAnimator.gameObject.SetActive(false);
         pm.playerMayMove = true;
         pa.canShoot = true;
