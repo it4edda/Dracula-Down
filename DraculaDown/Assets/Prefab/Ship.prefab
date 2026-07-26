@@ -136,6 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLife
   life: 3
   isAlive: 1
+  sceneLoader: {fileID: 0}
+  hpText: {fileID: 0}
+  collisionSound: {fileID: 8300000, guid: 3f0f06e8bf16e06478ca80ba0f629976, type: 3}
+  source: {fileID: 5465006674140445512}
 --- !u!114 &2789860889582283134
 MonoBehaviour:
   m_ObjectHideFlags: 0

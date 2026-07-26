@@ -237,6 +237,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4096649095531958568, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+      propertyPath: hpText
+      value: 
+      objectReference: {fileID: 1093746493}
+    - target: {fileID: 4096649095531958568, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 176507928}
@@ -361,7 +365,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_UseReflectionProbes: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -487,6 +491,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1093746493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9033911098721792352, guid: 19bcfad7e1f58c1438d61029d90ba81a, type: 3}
+  m_PrefabInstance: {fileID: 729521905435496431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &1186829424 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7363040354033978157, guid: 19bcfad7e1f58c1438d61029d90ba81a, type: 3}
