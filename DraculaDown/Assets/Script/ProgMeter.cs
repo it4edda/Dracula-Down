@@ -15,7 +15,7 @@ public class ProgMeter : MonoBehaviour
 
     private void Start()
     {
-        prog.maxValue = 300;
+        prog.maxValue = 120;
         prog.value = 0;
     }
 
