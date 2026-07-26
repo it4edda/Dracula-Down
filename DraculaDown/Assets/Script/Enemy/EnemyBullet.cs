@@ -21,7 +21,7 @@ public class EnemyBullet : EnemyWeapon
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
-        if (!other.CompareTag("Player")){ return; }
+        if (other.CompareTag("Enemy")){ return; }
         Instantiate(boom, other.transform.position, quaternion.identity);
         StopCoroutine(myTimer);
         killObj();
