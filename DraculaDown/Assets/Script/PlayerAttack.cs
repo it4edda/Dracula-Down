@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void LazerToggle()
     {
-        if (canShoot && miniCanShoot) lazer.SetActive(!lazer.activeSelf);
+        if (miniCanShoot) lazer.SetActive(!lazer.activeSelf);
     }
 
     public void ShoopDaWhoop() => StartCoroutine(DoLazer());
