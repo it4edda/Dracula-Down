@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttack()
     {
-        if (!canShoot && !miniCanShoot) return;
+        if (!canShoot || !miniCanShoot) return;
         Debug.Log("Attacked");
         Instantiate(bulletPrefab, transform.position, transform.rotation);
         StartCoroutine(ShootTimer());
