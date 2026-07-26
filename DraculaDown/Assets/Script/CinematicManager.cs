@@ -23,4 +23,9 @@ public class CinematicManager : MonoBehaviour
     {
         sceneLoader.ChangeScene("GameScene");
     }
+
+    public void callMenu()
+    {
+        sceneLoader.ChangeScene(("Menu"));
+    }
 }

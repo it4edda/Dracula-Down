@@ -5,6 +5,8 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private int life;
     public bool isAlive = true;
+    [SerializeField]private SceneLoader sceneLoader;
+    
     public void DamagePlayer(int damage)
     {
         life -= damage;
@@ -12,6 +14,7 @@ public class PlayerLife : MonoBehaviour
         {
             isAlive = false;
             Debug.Log("I AM DEADDD");
+            sceneLoader.ChangeScene("FAILure");
         }
     }
 
