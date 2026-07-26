@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3578295224784414704}
   m_Layer: 0
   m_Name: ShootingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,14 +129,14 @@ MonoBehaviour:
   speed: 2
   agroRadius: 5
   moveRadiusBounds:
-    min: 1
+    min: 3
     max: 5
   timeUntilMoveBounds:
     min: 0.5
     max: 2
   moveTarget: {x: 0, y: 0}
   bulletPrefab: {fileID: 8038683441903162079, guid: 2610843ee6e006546a8a58c661febf8d, type: 3}
-  fireRate: 2
+  fireRate: 5
 --- !u!1 &1237432928296233813
 GameObject:
   m_ObjectHideFlags: 0
