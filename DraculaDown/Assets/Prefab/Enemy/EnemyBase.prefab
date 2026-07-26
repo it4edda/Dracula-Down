@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8445104045437563302}
   - component: {fileID: 2287141216642662132}
   - component: {fileID: 1507828294746775778}
+  - component: {fileID: -6596219653037673177}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -318,3 +319,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLife
   boomSound: {fileID: 8300000, guid: eb1753b115318144eb6a1569ba0a6652, type: 3}
   hitPoints: 1
+--- !u!114 &-6596219653037673177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8438781053559395983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b9b3fe6332ca84da267f08ee024be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyWeapon
+  damage: 1
+  source: {fileID: 0}
