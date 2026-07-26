@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
   damage: 1
-  force: 5
+  force: 3
   lifetime: 5
   rb: {fileID: 759764435448189914}
   boom: {fileID: 6627588599991671545, guid: 61be4bd84ef37084abcc67427b25efbb, type: 3}

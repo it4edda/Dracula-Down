@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChargingEnemy : BaseEnemy
@@ -31,9 +29,9 @@ public class ChargingEnemy : BaseEnemy
     IEnumerator Charging()
     {
         isCharging = true;
+        isRotating = false;
         rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(timeUntilCharge);
-        isRotating = false;
         rb.linearVelocity = transform.up * (chargeSpeed * Time.deltaTime);
         yield return new WaitForSeconds(chargeDuration);
         rb.linearVelocity = Vector3.zero;

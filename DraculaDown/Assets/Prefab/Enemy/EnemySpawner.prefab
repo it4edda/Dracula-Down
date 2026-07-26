@@ -46,5 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnables:
   - {fileID: 275045617110734545, guid: 012fcd06950f9b9438b69caa6dd533f3, type: 3}
+  - {fileID: 314072233301075054, guid: 5a2b8681bbeedc249b44f01142621d12, type: 3}
   spawnRate: 2
   spawnRadius: 12
+  canSpawnEnemies: 0
