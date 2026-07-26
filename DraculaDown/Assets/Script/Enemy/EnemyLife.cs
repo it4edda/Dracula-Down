@@ -18,7 +18,7 @@ public class EnemyLife : MonoBehaviour
         if (hitPoints <= 0) Die();
     }
 
-    private void Die()
+    public virtual void Die()
     {
         audioSource.PlaySimpleSound(boomSound, 0.1f);
         Destroy(gameObject);

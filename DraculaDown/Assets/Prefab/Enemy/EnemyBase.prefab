@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1147198268, guid: 62e02ac97c9011e488375ebaceb4a573, type: 3}
+  m_Sprite: {fileID: -7945901444079236628, guid: 62e02ac97c9011e488375ebaceb4a573, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,11 +101,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8567000850256532730}
-  - component: {fileID: 4006738297717187346}
   - component: {fileID: 1846431957673065112}
   - component: {fileID: 5343860097393828950}
   - component: {fileID: 8445104045437563302}
   - component: {fileID: 2287141216642662132}
+  - component: {fileID: 4488870309531765461}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -129,20 +129,6 @@ Transform:
   - {fileID: 4214060031584589741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4006738297717187346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8438781053559395983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a778ed83ecdcf274ca15a58955b69e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyLife
-  boomSound: {fileID: 8300000, guid: eb1753b115318144eb6a1569ba0a6652, type: 3}
-  hitPoints: 1
 --- !u!58 &1846431957673065112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -318,3 +304,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4488870309531765461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8438781053559395983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea01b115701344e4a9faaa34c4941556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoomEnemy
+  boomSound: {fileID: 8300000, guid: 3f0f06e8bf16e06478ca80ba0f629976, type: 3}
+  hitPoints: 1
+  explosion: {fileID: 304939926771619216, guid: b1aa3b460d0172044a4bc5d822330293, type: 3}

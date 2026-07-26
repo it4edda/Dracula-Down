@@ -661,6 +661,10 @@ PrefabInstance:
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 176507928}
+    - target: {fileID: 2676932142926713319, guid: 19bcfad7e1f58c1438d61029d90ba81a, type: 3}
+      propertyPath: 'instances.Array.data[0]'
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5487363207524200838, guid: 19bcfad7e1f58c1438d61029d90ba81a, type: 3}
       propertyPath: m_Name
       value: MeterOMeter
