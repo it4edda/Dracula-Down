@@ -47,6 +47,10 @@ MonoBehaviour:
   spawnables:
   - {fileID: 275045617110734545, guid: 012fcd06950f9b9438b69caa6dd533f3, type: 3}
   - {fileID: 314072233301075054, guid: 5a2b8681bbeedc249b44f01142621d12, type: 3}
+  - {fileID: 2320585915176899334, guid: 14f80dbf22fc22546b17686271b1df0a, type: 3}
+  - {fileID: 8438781053559395983, guid: bbd6e162aced1694286969211dacdd27, type: 3}
+  - {fileID: 5847938647994920624, guid: 4a90aa246a8a9bb468d694e179682d96, type: 3}
+  - {fileID: 5442173324066393509, guid: bb717afa2a753184981929fad113feac, type: 3}
   spawnRate: 2
   spawnRadius: 12
   canSpawnEnemies: 0

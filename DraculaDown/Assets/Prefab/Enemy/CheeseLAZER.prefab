@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8951211725675009985}
   - component: {fileID: 4488749634893434615}
   - component: {fileID: 333123241551345267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CheeseLAZER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheeseFriend
   isBrimstone: 1
+  speed: 50
 --- !u!58 &333123241551345267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8159785503028569559}
   - component: {fileID: 3381769466254492285}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
