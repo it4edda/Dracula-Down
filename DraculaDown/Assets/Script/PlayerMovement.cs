@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private ParticleSystem postBurstParticle;
     [SerializeField] private AudioSource audioPlayer;
     [SerializeField] private AudioClip boostSound;
+    [SerializeField] private GameObject AOE;
     
     public bool playerMayMove = false;
     Rigidbody2D rb;
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         var boostTime = timeUntilBoost;
         var currentSpeed = speed;
         rb.AddForce(transform.up * (initialSpeed * Time.deltaTime),  ForceMode2D.Impulse);
+        StartCoroutine(aoeActivation());
         
         while (boostTime > 0f)
         {
@@ -126,6 +128,13 @@ public class PlayerMovement : MonoBehaviour
             boostTime -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    IEnumerator aoeActivation()
+    {
+        AOE.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        AOE.SetActive(false);
     }
 
     void BurstParticles()
