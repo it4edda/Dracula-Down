@@ -193,6 +193,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 774731049}
     - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
+      propertyPath: poofSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375175400614167549, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
       propertyPath: boostOMeter
       value: 
       objectReference: {fileID: 1863114211}
@@ -244,10 +248,6 @@ PrefabInstance:
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 176507928}
-    - target: {fileID: 7774206674075988295, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.86
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

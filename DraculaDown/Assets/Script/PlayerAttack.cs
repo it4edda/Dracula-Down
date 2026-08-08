@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] float reload = 1f;
     [SerializeField] private GameObject lazer;
+    [SerializeField] private PlayerMovement movement;
     public bool canShoot = false;
     bool miniCanShoot;
 
@@ -42,7 +43,12 @@ public class PlayerAttack : MonoBehaviour
 
     public void LazerToggle()
     {
-        if (miniCanShoot) lazer.SetActive(!lazer.activeSelf);
+        if (miniCanShoot)
+        {
+            bool a = lazer.activeSelf;
+            lazer.SetActive(!a);
+            movement.lazerHalter = !a;
+        }
     }
 
     public void ShoopDaWhoop() => StartCoroutine(DoLazer());

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] private float poofSpeed;
     [SerializeField] float initialSpeed;
     [SerializeField] float speedLoss;
     [SerializeField] float timeUntilBoost;
@@ -20,11 +21,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Sprite[] countDownNumbers;
     [SerializeField] private ParticleSystem burstParticle;
     [SerializeField] private ParticleSystem postBurstParticle;
+    [SerializeField] private ParticleSystem poofParticle;
     [SerializeField] private AudioSource audioPlayer;
     [SerializeField] private AudioClip boostSound;
+    [SerializeField] private AudioClip poofSound;
     [SerializeField] private GameObject AOE;
     
     public bool playerMayMove = false;
+    public bool lazerHalter = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -45,16 +49,19 @@ public class PlayerMovement : MonoBehaviour
     void GameStart()
     {
         playerMayMove = true;
-        if (autoBoost)
-        {
-            StartCoroutine(BoostCooldown());
-        }
     }
 
-    void Update()
+    void Update() 
     {
         if(!playerMayMove) return;
-        
+        RotationControl();
+
+        if (lazerHalter) return;
+        MovementControl();
+    }
+
+    void RotationControl()
+    {
         Vector3 mousePos = Mouse.current.position.ReadValue();   
         mousePos.z=Camera.main.nearClipPlane;
         Vector3 Worldpos=Camera.main.ScreenToWorldPoint(mousePos);
@@ -62,7 +69,10 @@ public class PlayerMovement : MonoBehaviour
         quaternion rotation = Quaternion.Euler(0f, 0f, angle -90f);
         transform.rotation = rotation;
         Debug.DrawLine(transform.position, Worldpos, Color.red);
+    }
 
+    void MovementControl()
+    {
         boostOMeterValue += Time.deltaTime;
         boostOMeter.value = boostOMeterValue;
         
@@ -78,38 +88,55 @@ public class PlayerMovement : MonoBehaviour
                 countDown.sprite = countDownNumbers[2];
                 break;
             
-            
             default: // Transparent
                 countDown.sprite = countDownNumbers[3];
                 break;
         }
+
+        if (boostOMeterValue >= timeUntilBoost)
+        {
+            //if (playerMayMove)
+            //{
+                StopCoroutine(ControlableBoost());
+                StartCoroutine(ControlableBoost());
+            //}
+            //Boost();
+            if (autoBoost)
+            {
+                BurstParticles();
+                boostOMeterValue = 0;
+            }
+        }
+    }
+    
+    private bool canPoof = true;
+    private Coroutine memory;
+    public void Boost() //this is poof
+    {
+        if (!playerMayMove || !canPoof) return;
+        if (memory != null)StopCoroutine(memory); 
+        var a = StartCoroutine(Poof());
+        memory = a;
     }
 
-    IEnumerator BoostCooldown()
+    IEnumerator Poof()
     {
-        yield return new WaitForSeconds(timeUntilBoost);
-        if (playerMayMove)
+        canPoof = false;
+        poofParticle.Play();
+        audioPlayer.PlayOneShot(poofSound);
+        var boostTime = 3f;
+        var currentSpeed = poofSpeed;
+        rb.AddForce(transform.up * (initialSpeed * Time.deltaTime),  ForceMode2D.Impulse);
+        
+        while (boostTime > 0f)
         {
-            StopCoroutine(ControlableBoost());
-            StartCoroutine(ControlableBoost());
+            rb.AddForce(transform.up * (currentSpeed * Time.deltaTime),  ForceMode2D.Force);
+            currentSpeed = Mathf.Lerp(currentSpeed, 0f, speedLoss * Time.deltaTime);
+            boostTime -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
         }
-        //Boost();
-        if (autoBoost)
-        {
-            StartCoroutine(BoostCooldown());
-            BurstParticles();
-            boostOMeterValue = 0;
-        }
-            
-    }
 
-    public void Boost()
-    {
-        if (!playerMayMove) return;
-        StopCoroutine(ControlableBoost());
-        StartCoroutine(ControlableBoost());
-            //rb.AddForce(transform.up * speed,  ForceMode2D.Impulse);
-            BurstParticles();
+        canPoof = true;
     }
     
     IEnumerator ControlableBoost()
@@ -122,8 +149,6 @@ public class PlayerMovement : MonoBehaviour
         while (boostTime > 0f)
         {
             rb.AddForce(transform.up * (currentSpeed * Time.deltaTime),  ForceMode2D.Force);
-            //rb.linearVelocity = transform.up * currentSpeed;
-            //
             currentSpeed = Mathf.Lerp(currentSpeed, 0f, speedLoss * Time.deltaTime);
             boostTime -= Time.deltaTime;
             yield return new WaitForEndOfFrame();

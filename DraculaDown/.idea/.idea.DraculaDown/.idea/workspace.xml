@@ -59,6 +59,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Builds/Space3\DraculaDown.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="F:\PASSION DRIVE\Builds\Space3" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:\PASSION DRIVE\Unity\Editor\6000.5.0f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;F:\PASSION DRIVE\Projects\CountDown\Dracula-Down\DraculaDown&quot; -debugCodeOptimization" />
@@ -112,6 +120,7 @@
       <workItem from="1784924480232" duration="3451000" />
       <workItem from="1784992318893" duration="5281000" />
       <workItem from="1785036229426" duration="1101000" />
+      <workItem from="1786192762797" duration="3497000" />
     </task>
     <servers />
   </component>
