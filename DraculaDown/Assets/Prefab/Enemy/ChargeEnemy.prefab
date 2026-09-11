@@ -130,6 +130,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 500
   agroRadius: 2
+  rubberbandingRadius: 8
   timeUntilCharge: 2
   chargeSpeed: 3000
   chargeDuration: 0.5
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyWeapon
   damage: 1
+  source: {fileID: 0}
 --- !u!82 &-8418346595756415057
 AudioSource:
   m_ObjectHideFlags: 0

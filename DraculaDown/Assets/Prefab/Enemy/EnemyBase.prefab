@@ -208,6 +208,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 2
   agroRadius: 0
+  rubberbandingRadius: 8
 --- !u!82 &2287141216642662132
 AudioSource:
   m_ObjectHideFlags: 0
