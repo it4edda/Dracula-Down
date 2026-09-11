@@ -37,6 +37,9 @@ public class BaseEnemy : MonoBehaviour
         if (!isMoving) { return; }
         
         rb.linearVelocity = transform.up * (speed * Time.deltaTime);
+        
+        //TODO The farther away the player is, the enemy should move faster,
+        //TODO See mario kart rubberbanding -mvh ALDIN
     }
 
     void RotateToTarget()

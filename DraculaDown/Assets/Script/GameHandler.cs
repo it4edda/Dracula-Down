@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameHandler : MonoBehaviour
 {
     public static event Action GameStarted;
-    
     private bool compressionValue = false;
     private bool launchIsFinished = false;
     [SerializeField] private Animator launchAnimator;
@@ -16,6 +15,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private CameraMovement cameraMovement;
     [SerializeField] private ParticleSystem launchParticle;
     [SerializeField] private ParticleSystem starParticles;
+    public bool iAmFullyPressed = false;
 
     private void Update()
     {
@@ -31,7 +31,7 @@ public class GameHandler : MonoBehaviour
         {
             compressionValue = true;
         }
-        else if (compressionValue && !Input.GetKey(KeyCode.Space))
+        else if (compressionValue && !Input.GetKey(KeyCode.Space) && iAmFullyPressed)
         {
             compressionValue = false;
             StartCoroutine(Allowances());

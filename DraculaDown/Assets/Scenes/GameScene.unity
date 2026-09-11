@@ -732,8 +732,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8467178988048203345, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1338498403}
   m_SourcePrefab: {fileID: 100100000, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
+--- !u!114 &1338498401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1312426970389252122, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
+  m_PrefabInstance: {fileID: 1338498400}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006503207cbf3204a8cb2d5a12ff2d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameHandler
+--- !u!1 &1338498402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8467178988048203345, guid: 2de46a6d4bc464b47947537728f6fe41, type: 3}
+  m_PrefabInstance: {fileID: 1338498400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338498403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338498402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e37d52dd08a7f439bf0bb02e668bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventX
+  sceneLoader: {fileID: 0}
+  gameHandler: {fileID: 1338498401}
 --- !u!4 &1587557142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7774206674075988295, guid: 4e184a90b33fb984f8fde600ed9ed8bb, type: 3}
